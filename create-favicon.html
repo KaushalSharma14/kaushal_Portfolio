@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Favicon.ico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .preview {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        canvas {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 10px;
+        }
+        .btn {
+            background: #4F46E5;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        .btn:hover {
+            background: #7C3AED;
+        }
+        .instructions {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #2196f3;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Create Favicon.ico for Portfolio</h1>
+        
+        <div class="instructions">
+            <h3>Why create favicon.ico?</h3>
+            <p>Some browsers and systems still prefer the traditional .ico format. This tool creates a PNG version that you can convert to .ico using online tools.</p>
+        </div>
+
+        <div class="preview">
+            <h3>Your Favicon Preview:</h3>
+            <canvas id="favicon32" width="32" height="32"></canvas>
+            <canvas id="favicon64" width="64" height="64"></canvas>
+            <canvas id="favicon128" width="128" height="128"></canvas>
+        </div>
+
+        <div style="text-align: center;">
+            <button class="btn" onclick="downloadPNG(32)">Download 32x32 PNG</button>
+            <button class="btn" onclick="downloadPNG(64)">Download 64x64 PNG</button>
+            <button class="btn" onclick="downloadPNG(128)">Download 128x128 PNG</button>
+        </div>
+
+        <div class="instructions">
+            <h3>📋 Next Steps:</h3>
+            <ol>
+                <li>Download the PNG files above</li>
+                <li>Go to <a href="https://favicon.io/favicon-converter/" target="_blank">favicon.io</a></li>
+                <li>Upload your PNG file</li>
+                <li>Download the generated favicon.ico</li>
+                <li>Place it in your <code>public/</code> folder</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // Load and draw the SVG favicon
+        function loadFavicon() {
+            const svgString = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="6" fill="url(#grad)"/>
+  <text x="16" y="22" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">KS</text>
+</svg>`;
+
+            const canvas32 = document.getElementById('favicon32');
+            const canvas64 = document.getElementById('favicon64');
+            const canvas128 = document.getElementById('favicon128');
+
+            drawFavicon(canvas32, 32, svgString);
+            drawFavicon(canvas64, 64, svgString);
+            drawFavicon(canvas128, 128, svgString);
+        }
+
+        function drawFavicon(canvas, size, svgString) {
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            
+            img.onload = function() {
+                ctx.clearRect(0, 0, size, size);
+                ctx.drawImage(img, 0, 0, size, size);
+            };
+            
+            const svgBlob = new Blob([svgString], {type: 'image/svg+xml'});
+            const url = URL.createObjectURL(svgBlob);
+            img.src = url;
+        }
+
+        function downloadPNG(size) {
+            const canvas = document.getElementById(`favicon${size}`);
+            const link = document.createElement('a');
+            link.download = `favicon-${size}x${size}.png`;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+
+        // Load favicon when page loads
+        window.onload = loadFavicon;
+    </script>
+</body>
+</html>

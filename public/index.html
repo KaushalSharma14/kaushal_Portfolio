@@ -2,14 +2,28 @@
 <html lang="en">
   <head>
     <meta charset ="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <!-- Favicon with cache busting -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.svg?v=2" type="image/svg+xml" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.svg?v=2" sizes="32x32" type="image/svg+xml" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.svg?v=2" sizes="16x16" type="image/svg+xml" />
+    
+    <!-- Fallback for older browsers -->
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.svg?v=2" />
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.svg?v=2" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.svg?v=2" sizes="180x180" />
+    
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#4F46E5" />
+    <meta name="msapplication-TileImage" content="%PUBLIC_URL%/favicon.svg?v=2" />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#4F46E5" />
     <meta
       name="description"
       content="Kaushal Sharma - MCA Student | Developer | Sports Enthusiast"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <title>Kaushal Sharma - Portfolio</title>
