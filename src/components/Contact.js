@@ -11,17 +11,11 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitStatus('');
 
-    // 🔧 EMAILJS SETUP INSTRUCTIONS:
-    // 1. ✅ Public Key: pyyUhnvGIVH0Ihr4A (ALREADY DONE!)
-    // 2. ⏳ Service ID: Get from EmailJS → Email Services → Copy Service ID
-    // 3. ⏳ Template ID: Get from EmailJS → Email Templates → Copy Template ID
-    // 4. Replace the 2 values below with your actual IDs
-    
     emailjs.sendForm(
-      'YOUR_SERVICE_ID',     // ← Replace with: service_abc123 (from Email Services)
-      'YOUR_TEMPLATE_ID',    // ← Replace with: template_xyz789 (from Email Templates)
+      'YOUR_SERVICE_ID',
+      'YOUR_TEMPLATE_ID',
       form.current,
-      'pyyUhnvGIVH0Ihr4A'   // ✅ Your Public Key (ALREADY DONE!)
+      'pyyUhnvGIVH0Ihr4A'
     )
       .then((result) => {
         console.log('SUCCESS!', result.text);
@@ -96,7 +90,6 @@ const Contact = () => {
         <div className="contact-form">
           <h3>Send me a message</h3>
           
-          {/* 📧 EMAILJS FORM - READY TO USE! */}
           <form ref={form} onSubmit={sendEmail}>
             <div className="form-group">
               <label htmlFor="user_name">Name *</label>
@@ -163,17 +156,6 @@ const Contact = () => {
               </div>
             )}
           </form>
-          
-          {/* 💡 QUICK SETUP TIP */}
-          <div className="setup-tip">
-            <p><strong>🎯 Setup Progress:</strong></p>
-            <ul style={{ textAlign: 'left', margin: '1rem 0', paddingLeft: '2rem' }}>
-              <li>✅ Public Key: <code>pyyUhnvGIVH0Ihr4A</code></li>
-              <li>⏳ Service ID: Get from EmailJS → Email Services</li>
-              <li>⏳ Template ID: Get from EmailJS → Email Templates</li>
-            </ul>
-            <p><strong>💡 Next:</strong> Replace the 2 remaining placeholder values to make your contact form work!</p>
-          </div>
         </div>
       </div>
     </div>
