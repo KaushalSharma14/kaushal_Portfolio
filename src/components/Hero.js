@@ -1,29 +1,29 @@
 import React from 'react';
 
 const Hero = () => {
+
   return (
-    <div className="home">
-      <div className="home-img">
-        <img src="/kaushal sharma.jpg" alt="Kaushal Sharma" />
-      </div>
-      <div className="home-content">
-        <h1>Hi, It's <span>Kaushal Sharma</span></h1>
-        <h3 className="typing-text">I'm a <span></span></h3>
-        <p>
-          MCA Student | Developer | Sports Enthusiast from Mandawa, Rajasthan. 
-          Currently pursuing my Master of Computer Applications final year at Lovely Professional University, Punjab. 
-          I'm a multi-tasker, quick learner, and passionate about technology, creativity, and continuous growth.
-        </p>
-        <div className="social-icons">
-          <a href="https://linkedin.com/in/kaushal-sharma-sde" target="_blank" rel="noopener noreferrer">
-            <i className="fa-brands fa-linkedin"></i>
-          </a>
-          <a href="https://github.com/KaushalSharma14" target="_blank" rel="noopener noreferrer">
-            <i className="fa-brands fa-github"></i>
-          </a>
-          <a href="https://www.instagram.com/kawshal_sharma/?igsh=aGN6emptd3d0eHF2&utm_source=qr#" target="_blank" rel="noopener noreferrer">
-            <i className="fa-brands fa-instagram"></i>
-          </a>
+    <div className="hero-section">
+      <div className="hero-content">
+        <div className="hero-text">
+          <h1 className="hero-title">Kaushal Sharma</h1>
+      
+          <p className="hero-description">
+            MCA Final Year student at Lovely Professional University, passionate about building reliable, user-focused software.
+          </p>
+          <div className="cta-buttons">
+            <a href="#projects" className="cta-primary">
+              <span>View Work</span>
+            </a>
+            <a href="#contact" className="cta-secondary">
+              <span>Contact</span>
+            </a>
+          </div>
+        </div>
+        <div className="hero-image">
+          <div className="image-container">
+            <img src="/kaushal sharma.jpg" alt="Kaushal Sharma" className="hero-profile" />
+          </div>
         </div>
       </div>
     </div>

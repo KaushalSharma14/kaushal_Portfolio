@@ -11,6 +11,7 @@ import Gallery from './components/Gallery';
 import Recognition from './components/Recognition';
 import Achievements from './components/Achievements';
 import Contact from './components/Contact';
+import ScrollProgress from './components/ScrollProgress';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -63,6 +64,7 @@ function App() {
 
   return (
     <div className="App">
+      <ScrollProgress />
       <Header 
         activeSection={activeSection} 
         scrollToSection={scrollToSection}
