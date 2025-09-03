@@ -2050,6 +2050,13 @@ span{
         height: 400px;
     }
     
+    /* Reduce About section image size on tablets */
+    .about-image-container .image-background {
+        height: 350px;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
     .floating-dot {
         width: 8px;
         height: 8px;
@@ -2076,6 +2083,13 @@ span{
     .image-background {
         height: 300px;
         padding: 1rem;
+    }
+    
+    /* Reduce About section image size on mobile */
+    .about-image-container .image-background {
+        height: 250px;
+        max-width: 280px;
+        margin: 0 auto;
     }
     
     .download-card {
@@ -2293,6 +2307,18 @@ nav { border-color: transparent; }
     object-position: center 18%;
 }
 @media (max-width: 768px) {
-    .half-photo .image-background { height: 420px; }
+    .half-photo .image-background { 
+        height: 350px; 
+        max-width: 350px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .half-photo .image-background { 
+        height: 250px; 
+        max-width: 280px;
+        margin: 0 auto;
+    }
 }
 
