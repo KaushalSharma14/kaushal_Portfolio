@@ -6,6 +6,7 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Resume from './components/Resume';
+import Experience from './components/Experience';
 import Certifications from './components/Certifications';
 import Gallery from './components/Gallery';
 import Recognition from './components/Recognition';
@@ -89,6 +90,10 @@ function App() {
         
         <section id="resume" data-aos="fade-up">
           <Resume />
+        </section>
+        
+        <section id="experience" data-aos="fade-up">
+          <Experience />
         </section>
         
         <section id="certifications" data-aos="fade-up">

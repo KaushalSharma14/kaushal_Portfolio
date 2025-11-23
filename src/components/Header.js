@@ -39,6 +39,12 @@ const Header = ({ activeSection, scrollToSection }) => {
           Resume
         </a>
         <a 
+          className={activeSection === 'experience' ? 'active' : ''} 
+          onClick={() => scrollToSection('experience')}
+        >
+          Experience
+        </a>
+        <a 
           className={activeSection === 'certifications' ? 'active' : ''} 
           onClick={() => scrollToSection('certifications')}
         >
