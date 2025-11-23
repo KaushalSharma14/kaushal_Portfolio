@@ -3,7 +3,7 @@ import React from 'react';
 const Resume = () => {
   const handleDownloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/Kaushal_Sharma_Resume_.pdf';
+    link.href = `${process.env.PUBLIC_URL}/Kaushal_Sharma_Resume_.pdf`;
     link.download = 'Kaushal_Sharma_Resume_.pdf';
     link.click();
   };

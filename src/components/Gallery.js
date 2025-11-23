@@ -9,21 +9,21 @@ const Gallery = () => {
         id: 1,
         title: "Snake Photography",
         description: "Capturing the beauty and mystery of wildlife",
-        image: "/snakephoto.jpg",
+        image: `${process.env.PUBLIC_URL}/snakephoto.jpg`,
         link: "https://www.instagram.com/capturedbykaushal/?igsh=MjloMjk3ZHZrdndq&utm_source=qr#"
       },
       {
         id: 2,
         title: "Man Photography",
         description: "Portrait photography capturing human emotions",
-        image: "/man.jpg",
+        image: `${process.env.PUBLIC_URL}/man.jpg`,
         link: "https://www.instagram.com/capturedbykaushal/?igsh=MjloMjk3ZHZrdndq&utm_source=qr#"
       },
       {
         id: 3,
         title: "Stadium Photography",
         description: "Architectural and sports venue photography",
-        image: "/stadium.jpg",
+        image: `${process.env.PUBLIC_URL}/stadium.jpg`,
         link: "https://www.instagram.com/capturedbykaushal/?igsh=MjloMjk3ZHZrdndq&utm_source=qr#"
       }
     ],
@@ -81,7 +81,14 @@ const Gallery = () => {
           <div className="gallery-grid">
             {galleryData.photography.map((item) => (
               <div key={item.id} className="gallery-item">
-                <img src={item.image} alt={item.title} />
+                <img 
+                  src={item.image} 
+                  alt={item.title}
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = `${process.env.PUBLIC_URL}/kaushal.jpg`;
+                  }}
+                />
                 <div className="item-overlay">
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>

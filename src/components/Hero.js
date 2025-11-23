@@ -22,7 +22,21 @@ const Hero = () => {
         </div>
         <div className="hero-image">
           <div className="image-container">
-            <img src="/Kaushal Sharma.jpg" alt="Kaushal Sharma" className="hero-profile" />
+            <img 
+              src={`${process.env.PUBLIC_URL}/Kaushal Sharma.jpg`} 
+              alt="Kaushal Sharma" 
+              className="hero-profile"
+              onError={(e) => {
+                e.target.onerror = null;
+                // Try with URL encoded version
+                if (!e.target.src.includes('%20')) {
+                  e.target.src = `${process.env.PUBLIC_URL}/Kaushal%20Sharma.jpg`;
+                } else {
+                  // Fallback to alternative image
+                  e.target.src = `${process.env.PUBLIC_URL}/kaushal.jpg`;
+                }
+              }}
+            />
           </div>
         </div>
       </div>

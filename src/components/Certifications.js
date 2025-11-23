@@ -10,21 +10,21 @@ const Certifications = () => {
       issuer: "FreeCodeCamp",
       description: "Comprehensive certification covering modern web development practices, responsive design principles, and accessibility standards.",
       icon: "fas fa-certificate",
-      image: "/certificate/responsive-web-design.jpg.jpg"
+      image: `${process.env.PUBLIC_URL}/certificate/responsive-web-design.jpg.jpg`
     },
     {
       title: "Computer Communication & Networking",
       issuer: "Saylor Academy",
       description: "Advanced networking concepts, protocols, and system integration principles for modern computing environments.",
       icon: "fas fa-network-wired",
-      image: "/certificate/networking.jpg.jpg"
+      image: `${process.env.PUBLIC_URL}/certificate/networking.jpg.jpg`
     },
     {
       title: "Software Engineering",
       issuer: "Saylor Academy",
       description: "Software development lifecycle, Agile methodologies, and best practices for building scalable applications.",
       icon: "fas fa-code-branch",
-      image: "/certificate/software-engineering.jpg.jpg"
+      image: `${process.env.PUBLIC_URL}/certificate/software-engineering.jpg.jpg`
     }
   ];
 

@@ -42,7 +42,15 @@ const About = () => {
         <div className="about-image-container">
           <div className="image-wrapper half-photo">
             <div className="image-background">
-              <img src="/2ndkaushal.jpg" alt="Kaushal Sharma" className="profile-image" />
+              <img 
+                src={`${process.env.PUBLIC_URL}/2ndkaushal.jpg`} 
+                alt="Kaushal Sharma" 
+                className="profile-image"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = `${process.env.PUBLIC_URL}/kaushal.jpg`;
+                }}
+              />
             </div>
           </div>
         </div>
